@@ -1,6 +1,6 @@
 import { useGSAP } from '@gsap/react'
-import gsap from 'gsap'
-import React, { useRef } from 'react'
+import { gsap } from 'gsap'
+import { React, useRef } from 'react'
 
 const FONT_WEIGHT = {
 	subtitle: {
@@ -24,13 +24,17 @@ const renderText = (text, className, baseWeight = 400) => {
 }
 
 const setupTextHover = (container, type) => {
-	if (!container) return
+	if (!container) return () => {}
 
-	const letters = container.querySelectorAll('span')
+	const letters = container.querySelectorAll("span")
 	const { min, max, default: base } = FONT_WEIGHT[type]
 
 	const animateLetter = (letter, weight, duration = 0.25) => {
-		return gsap.to(letter, { duration, ease: 'power2.out', fontFeatureSettings: `'wght' ${weight}` })
+		return gsap.to(letter, {
+			duration,
+			ease: "power2.out",
+			fontVariationSettings: `'wght' ${weight}`,
+		})
 	}
 
 	const handleMouseMove = (e) => {
@@ -62,8 +66,8 @@ const Welcome = () => {
 	const subTitleRef = useRef(null)
 
 	useGSAP(() => {
-		const titleCleanup = setupTextHover(titleRef.current, 'title')
-		const subtitleCleanup = setupTextHover(subTitleRef.current, 'subtitle')
+		const titleCleanup = setupTextHover(titleRef.current, "title")
+		const subtitleCleanup = setupTextHover(subTitleRef.current, "subtitle")
 
 		return () => {
 			titleCleanup()
@@ -74,11 +78,14 @@ const Welcome = () => {
 	return (
 		<section id="welcome">
 			<p ref={subTitleRef}>
-				{renderText("Hey, I'm Vijay! Welcome to my", 'text-3xl font-georama', 100)}
+				{renderText("Hey, I'm Vijay Rawat! Welcome to my", 'text-3xl font-georama', 100)}
 			</p>
 			<h1 ref={titleRef} className="mt-7">
 				{renderText("portfolio", 'text-9xl italic font-georama')}
 			</h1>
+			<div className="small-screen">
+				<p>This portfolio is designed for desktop/tablet screens only.</p>
+			</div>
 		</section>
 	)
 }
