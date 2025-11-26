@@ -74,8 +74,109 @@ const dockApps = [
 	},
 ]
 
+const techStack = [
+	{
+		category: 'Frontend',
+		items: [
+			'HTML',
+			'React.js',
+			'Angular',
+			'TypeScript',
+		],
+	},
+	{
+		category: 'Mobile',
+		items: [
+			'Android',
+			'Flutter',
+		],
+	},
+	{
+		category: 'Styling',
+		items: [
+			'CSS',
+			'Tailwind CSS',
+		],
+	},
+	{
+		category: 'Backend',
+		items: [
+			'PHP',
+			'Node.js',
+			'Express',
+		],
+	},
+	{
+		category: 'Database',
+		items: [
+			'MySQL',
+			'MongoDB',
+		],
+	},
+	{
+		category: 'Dev Tools',
+		items: [
+			'Git',
+			'GitHub',
+			'GitLab',
+			'BitBucket',
+		],
+	},
+]
+
 export {
 	navLinks,
 	navIcons,
 	dockApps,
+	techStack,
+}
+
+const INITIAL_Z_INDEX = 1000
+
+const WINDOW_CONFIG = {
+	finder: {
+		isOpen: false,
+		zIndex: INITIAL_Z_INDEX,
+		data: null,
+	},
+	contact: {
+		isOpen: false,
+		zIndex: INITIAL_Z_INDEX,
+		data: null,
+	},
+	resume: {
+		isOpen: false,
+		zIndex: INITIAL_Z_INDEX,
+		data: null,
+	},
+	safari: {
+		isOpen: false,
+		zIndex: INITIAL_Z_INDEX,
+		data: null,
+	},
+	photos: {
+		isOpen: false,
+		zIndex: INITIAL_Z_INDEX,
+		data: null,
+	},
+	terminal: {
+		isOpen: false,
+		zIndex: INITIAL_Z_INDEX,
+		data: null,
+	},
+	txtfile: {
+		isOpen: false,
+		zIndex: INITIAL_Z_INDEX,
+		data: null,
+	},
+	imgfile: {
+		isOpen: false,
+		zIndex: INITIAL_Z_INDEX,
+		data: null,
+	},
+}
+
+export {
+	INITIAL_Z_INDEX,
+	WINDOW_CONFIG,
 }
