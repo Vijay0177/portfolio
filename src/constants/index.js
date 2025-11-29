@@ -74,6 +74,8 @@ const dockApps = [
 	},
 ]
 
+const blogPosts = []
+
 const techStack = [
 	{
 		category: 'Frontend',
@@ -124,11 +126,21 @@ const techStack = [
 	},
 ]
 
+const socials = []
+
+const photosLinks = []
+
+const gallery = []
+
 export {
 	navLinks,
 	navIcons,
 	dockApps,
+	blogPosts,
 	techStack,
+	socials,
+	photosLinks,
+	gallery,
 }
 
 const INITIAL_Z_INDEX = 1000
