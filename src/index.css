@@ -201,4 +201,15 @@ html, body {
 			}
 		}
 	}
+	#resume {
+		@apply w-fit h-[85vh] absolute top-16 left-7/12 bg-white shadow-2xl drop-shadow-2xl rounded-2xl overflow-hidden;
+		#window-header {
+			h2 {
+				@apply font-bold text-sm text-center flex-1;
+			}
+		}
+		.document-page {
+			@apply h-[600px] w-full overflow-y-auto overflow-x-hidden scroll-smooth snap-y snap-mandatory p-4;
+		}
+	}
 }
